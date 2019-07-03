@@ -1,0 +1,6 @@
+app:
+  id: behavior-captcha-service
+apollo:
+  bootstrap:
+    enabled: true
+  cacheDir: /server/application/behavior-captcha-service/apollo-cache
