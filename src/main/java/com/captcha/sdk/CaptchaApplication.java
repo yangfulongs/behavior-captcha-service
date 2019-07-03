@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableApolloConfig
 @SpringBootApplication(scanBasePackages = {"com.captcha.sdk.*"})
 @EnableEurekaClient
-@ComponentScan({"com.jianlc.tc.apm","com.captcha.sdk"})
 public class CaptchaApplication {
 
 	public static void main(String[] args) {
