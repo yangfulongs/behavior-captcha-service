@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 在Eclipse中运行，请到Eclipse的安装目录中找log文件，Tomcat下，请到Tomcat目录下找 -->
+    <property name="PROJECT_NAME" value="behavior-captcha-service"/>
+    <property name="LOG_PATH" value="/server"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <Target>System.out</Target>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>%d [%p] [${PROJECT_NAME}] [%C:%L] - %m %n</Pattern>
+            </layout>
+        </encoder>
+        <!-- 此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <logger name="org.springframework" level="INFO"/>
+
+    <!-- 生产环境，将此级别配置为适合的级别，以名日志文件太多或影响程序性能 -->
+    <root level="INFO">       
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
